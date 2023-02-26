@@ -1,0 +1,71 @@
+# Warnings Configuration File
+logSpecificInfo: false
+# Should the specifics of a players warnings be logged into the data.yml file?
+# Includes who warned them, warning reasons, time, and addition, setting, and removal of warnings
+maxWarnings: 5
+# Maximum amount of warnings before punishment commands are used
+# If punishment commands are disabled, the players warnings will reset when they reach maximum warnings
+# Set to -1 for infinite warnings/if categories are enabled!
+# Will not be used if you are using categories
+dateFormat: "dd-MM-yyyy HH:mm:ss"
+# The format of the timing system
+# dd = day | MM = month | yyyy = year | HH = hour | mm = minute | ss = second
+categories:
+  use: false
+  # Enables very specific, highly configurable warning/punishing system.
+  message:
+  - "&8&l>&7&m-------------------&8&l[&c&lCategories&8&l]&7&m-------------------&8&l<"
+  - "&cSpam"
+  - "&4Warn a player for Spam with: /warn <player> Spam <reason>"
+  - "&cHacks"
+  - "&4Warn a player for Spam with: /warn <player> Hacks <reason>"
+  - "&7&m-----------------------------------------------------"
+  # The message shown when /categories is typed
+  spam: # Enforce this category with /warn <player> spam <reason>
+    punishments:
+    - kick %player% Spam
+    # Command ran on first warning for spam
+    - mute %player%
+    # Command ran on second warning for spam
+    - ban %player%
+    # Command ran on third warning for spam
+    # Yes, you can add custom categories/punishments here! Just copy/paste the template!
+  hacks:
+    punishments:
+    - tempbanban %player% 10d hacked client
+    - ban %player% hacked client
+usePunishmentCommands: true
+# Should the punishment commands be ran?
+# Will not be ran if you are using categories!
+punishmentCommands:
+- ban %player% Exceeding the maximum number of warnings
+# The commands ran when max warnings is reached/exceeded
+resetEnabled: true
+# Should warnings ever reset?
+resetTime: 10080
+# Reset time (in minutes!)
+warningMessage:
+- "&8&l>&7&m---------------------&8&l[&c&lWarning&8&l]&7&m---------------------&8&l<"
+- "&8&l> &4Warned By: &c%warner%"
+- "&8&l> &4Warned For: &c%reason%"
+- "&8&l> &4Time of Warning: &c%time%"
+- "&8&l> &4Total Warnings: &c%warnings%&4/&c%maxwarnings%"
+- "&7&m-----------------------------------------------------"
+# Message sent to the player who has been warned
+# %maxwarnings% will not work if categories are enabled!
+# Example of category-compatible warning message:
+#- "&8&l>&7&m---------------------&8&l[&c&lWarning&8&l]&7&m---------------------&8&l<"
+#- "&8&l> &4Warned By: &c%warner%"
+#- "&8&l> &4Warned For: &c%reason%"
+#- "&8&l> &4Category of Warning: &c%category%"
+#- "&8&l> &4Time of Warning: &c%time%"
+#- "&8&l> &4Total Warnings for %category%: &c%warnings%"
+#- "&7&m-----------------------------------------------------"
+warningInfoMessage:
+ - "&8&l[&c&l%player%&8&l]"
+ - "&8&l> &4Logged Warning Information:"
+ - "&8&l> &c%info%"
+# Message sent when advanced warning information is viewed (only available if logSpecificInfo is true)
+broadcastMessage:
+- "&8[&4Warning&8] &c%player% &4has been warned by &c%warner% &4for &c%reason%&4!"
+# Message broadcasted to players with the permission warnings.receivebroadcast
