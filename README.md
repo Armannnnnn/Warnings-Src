@@ -8,5 +8,5 @@
 ### /ClearWarnings <Player> - Clear a player's warning count
 ### /ResetWarnings - Reset ALL warnings serverwide
 ### /WarningInfo, /WarningInfo <Player> - View the detailed warning information of you or another player
-###/ReloadWarnings - Reload the configuration file
+### /ReloadWarnings - Reload the configuration file
 ### /Categories - View the warning categories (Only works if categories are enabled)
