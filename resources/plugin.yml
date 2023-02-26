@@ -1,0 +1,86 @@
+name: Warnings
+version: 1.1.0
+main: me.arman.warnings.Main
+description: An advanced warning system for those who demand the best
+commands:
+   warn:
+      description: Warn someone
+   warnings:
+      description: View warning counts
+   clearwarnings:
+      description: Clear warning counts
+   setwarnings:
+      description: Set warning counts
+   addwarnings:
+      description: Add warning counts
+   takewarnings:
+      description: Remove warning counts
+   resetwarnings:
+      description: Reset all warning counts
+   reloadwarnings:
+      description: Reload the configuration file
+   warninginfo:
+      description: View warning information
+   categories:
+      description: View warning categories
+permissions:
+  warnings.*:
+    description: Gives access to all warning commands
+    default: op
+    children:
+      warnings.warn: true
+      warnings.immune: true
+      warnings.receivebroadcast: true
+      warnings.add: true
+      warnings.clear: true
+      warnings.reset: true
+      warnings.set: true
+      warnings.take: true
+      warnings.view: true
+      warnings.view.others: true
+      warnings.info: true
+      warnings.info.others: true
+      warnings.reload: true
+      warnings.categories: true
+  warnings.warn:
+    description: Use the warning command
+    default: op
+  warnings.immune:
+    description: Use the warning command
+    default: op
+  warnings.receivebroadcast:
+    description: View the broadcast message
+    default: true
+  warnings.add:
+    description: Add warnings to players
+    default: op
+  warnings.set:
+    description: Set player's warnings
+    default: op
+  warnings.take:
+    description: Take warnings from players
+    default: op
+  warnings.clear:
+    description: Clear a specific player's warnings
+    default: op
+  warnings.reset:
+    description: Reset ALL warnings
+    default: op
+  warnings.view:
+    description: View your own warnings
+    default: true
+  warnings.view.others:
+    description: View others warnings
+    default: op
+  warnings.reload:
+    description: Reload the configuration file
+    default: op
+  warnings.info:
+    description: View your warning information
+    default: true
+  warnings.info.others:
+    description: View others warning information
+    default: op
+  warnings.categories:
+    description: View warning categories
+    default: true
